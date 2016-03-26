@@ -1,4 +1,5 @@
 *.exe
 *.out
 *.pdf
+*utf8.c
 demo*
