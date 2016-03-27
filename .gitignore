@@ -7,3 +7,4 @@ demo*
 *.tbz
 *.tar*
 *ipynb*
+*.py~
