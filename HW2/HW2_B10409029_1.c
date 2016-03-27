@@ -2,12 +2,10 @@
 #include <stdlib.h>
 
 int main() {
-
-
-  char sname1[20], sname2[20], sname3[20];
+  char  sname1[20], sname2[20], sname3[20];
   float score1, score2, score3;
 
-	start:
+start:
 
   printf("請依序輸入三位學生姓名：\n");
   scanf("%s %s %s", sname1, sname2, sname3);

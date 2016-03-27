@@ -3,3 +3,6 @@
 *.pdf
 *utf8.c
 demo*
+*.tgz
+*.tbz
+*.tar*
