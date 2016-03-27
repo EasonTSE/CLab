@@ -5,9 +5,16 @@ int main() {
   float chin, eng, math, failed, highest, loweset;
   int   oper, counter;
 
+start:
   printf("請分別輸入國英數的成績(以空白隔開)：\n");
   scanf("%f %f %f", &chin, &eng, &math);
-
+  
+  if (chin < 0 || chin > 100 ||
+  	  eng < 0 || eng > 100 ||
+	  math < 0 || math > 100) { 
+  	printf("成績輸入有誤！分數應在 0 至 100分內\n");
+  	goto start;
+  } 
 choose:
   printf("選擇接下來的動作(輸入數字)\n");
   printf("1.總分 2.平均分 3.不及格科目數 4.最高分 5.最低分\n");
