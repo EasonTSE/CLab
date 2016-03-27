@@ -5,8 +5,8 @@ import os
 import subprocess as sp
 
 try:
-	inpfile = os.getcwd() + '/' + sys.argv[1]
-	outpfile = os.getcwd() + '/' + sys.argv[1][:15] + '.c'
+    inpfile = os.getcwd() + '/' + sys.argv[1]
+    outpfile = os.getcwd() + '/' + sys.argv[1][:15] + '.c'
 except:
     print('usage: utf8_to_big.py <input file>')
     raise SystemExit(0)
