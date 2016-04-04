@@ -4,9 +4,10 @@
 int main()
 {
 	int num1, num2, i, hcf;
-	char oper = 'q';
+	char oper;
 
-	do {
+	while (1)
+	{
 		printf("請輸入兩個數，將找出最大公因數：");
 		scanf("%d %d", &num1, &num2);
 
@@ -18,10 +19,15 @@ int main()
 
 		fflush(stdin);
 
-		printf("輸入y重新執行，n退出程式：");
-		scanf("%c", &oper);
-
-	} while (oper == 'y' || oper != 'n');
+		while (oper != 'y' || oper != 'n')
+		{
+			printf("輸入y重新執行，n退出程式：");
+			oper = getchar();
+			break;
+		}
+		if (oper == 'n')
+			break;
+	}
 
 	printf("多謝惠顧\n");
 
