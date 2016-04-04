@@ -29,10 +29,9 @@ int main()
 	{
 		for (space = row - median; space >= 1; space--)
 			printf(" ");
-		for (star = total_row - (rStar * 2); star >= 1; star--)
+		for (star = total_row - rStar++ * 2; star >= 1; star--)
 			printf("*");
 		printf("\n");
-		rStar++;
 	}
 
 	printf("½Ð¿é¤J¦C¼Æ¡G");
