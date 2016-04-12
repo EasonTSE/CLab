@@ -12,12 +12,12 @@ int main()
 	{
 		do
 		{
-			printf("æŠ•è—å‘½ä¸­æ•¸èˆ‡ç¸½æ•¸ï¼š");
+			printf("§ëÂÅ©R¤¤¼Æ»PÁ`¼Æ¡G");
 			scanf("%d %d", &hit, &t_shoot);
 
 			if (isVaild(hit, t_shoot) == 0)
 			{
-				printf("è¼¸å…¥éŒ¯èª¤ (è¼¸å…¥0çµæŸ) ");
+				printf("¿é¤J¿ù»~ (¿é¤J0µ²§ô) ");
 				scanf("%d", &oper);
 			}
 			if (oper == 0)
@@ -27,7 +27,7 @@ int main()
 		if (oper == 0)
 			break;
 
-		printf("å‘½ä¸­ç‡ç‚ºï¼š%3.2f%% (è¼¸å…¥0çµæŸ) ", shoot(hit, t_shoot));
+		printf("©R¤¤²v¬°¡G%3.2f%% (¿é¤J0µ²§ô) ", shoot(hit, t_shoot));
 
 		all_hit += hit;
 		all_shoot += t_shoot;
@@ -35,7 +35,7 @@ int main()
 		scanf("%d", &oper);
 	} while (oper != 0);
 
-	printf("ç¸½å‘½ä¸­/æŠ•ç±ƒæ•¸èˆ‡å‘½ä¸­ç‡ç‚ºï¼š%d/%d %3.2f%%\n",
+	printf("Á`©R¤¤/§ëÄx¼Æ»P©R¤¤²v¬°¡G%d/%d %3.2f%%\n",
 	       all_hit,
 	       all_shoot,
 	       shoot(all_hit,all_shoot));
