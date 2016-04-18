@@ -9,11 +9,11 @@ int main()
 	int num1, num2;
 
 	do {
-		printf("è«‹è¼¸å…¥å…©å€‹1ï½ž30ä¹‹é–“çš„æ­£æ•´æ•¸ï¼š");
+		printf("½Ð¿é¤J¨â­Ó1¡ã30¤§¶¡ªº¥¿¾ã¼Æ¡G");
 		scanf("%d %d", &num1, &num2);
 	} while (isValid(num1,num2) == 0);
 
-	printf("æ•¸åˆ—ä¸­ç¬¬ %d å€‹åˆ°ç¬¬ %d å€‹æ•¸ç‚ºï¼š\n", num1, num2);
+	printf("¼Æ¦C¤¤²Ä %d ­Ó¨ì²Ä %d ­Ó¼Æ¬°¡G\n", num1, num2);
 
 	int i;
 	for (i = num1; i <= num2; i++)

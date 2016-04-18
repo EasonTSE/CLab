@@ -1,37 +1,47 @@
 # include <stdio.h>
 # include <stdlib.h>
 
-double GetSeriesN(int n);
-int isValid(int, int);
+double GetSeriesN(int);
+char isValid(int, int);
+double iSum(int);
+double rSum(int);
 
 int main()
 {
 	int num1, num2;
 
 	do {
-		printf("è«‹è¼¸å…¥å…©å€‹1ï½ž30ä¹‹é–“çš„æ­£æ•´æ•¸ï¼š");
+		printf("½Ð¿é¤J¨â­Ó1¡ã30¤§¶¡ªº¥¿¾ã¼Æ¡G");
 		scanf("%d %d", &num1, &num2);
-	} while (isValid(num1,num2) == 0);
+	} while (isValid(num1,num2) == 'N');
 
-	printf("æ•¸åˆ—ä¸­ç¬¬ %d å€‹åˆ°ç¬¬ %d å€‹æ•¸ç‚ºï¼š\n", num1, num2);
+	printf("¼Æ¦C¤¤²Ä %d ­Ó¨ì²Ä %d ­Ó¼Æ¬°¡G\n", num1, num2);
 
 	int i;
 	for (i = num1; i <= num2; i++)
 		printf("%.3f ", GetSeriesN(i));
-
 	printf("\n");
+
+	int x,y;
+	printf("½Ð¿é¤Jx­È¡G");
+	scanf(" %d", &x);
+	printf("iSum(%d)=%f\n", x, iSum(x));
+
+	printf("½Ð¿é¤Jy­È¡G");
+	scanf(" %d", &y);
+	printf("rSum(%d)=%f\n", y, rSum(y));
 
 	return 0;
 }
 
-int isValid(int x, int y)
+char isValid(int x, int y)
 {
 	if (x < 1 || x > 30)
-		return 0;
+		return 'N';
 	else if ( y < 1 || y > 30)
-		return 0;
+		return 'N';
 	else
-		return 1;
+		return 'Y';
 }
 
 double GetSeriesN(int n)
@@ -40,4 +50,20 @@ double GetSeriesN(int n)
 		return ((double)(n + 1) / (double)(n + 2)) * GetSeriesN(n - 1);
 	else
 		return 1;
+}
+
+double iSum(int n)
+{
+	double sum = 0;
+	for (int i = 1; i <= n; i++)
+		sum += GetSeriesN(i);
+	return sum;
+}
+
+double rSum(int n)
+{
+	if (n > 0)
+		return GetSeriesN(n) + rSum(n-1);
+	else
+		return 0;
 }
