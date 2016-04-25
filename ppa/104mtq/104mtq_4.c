@@ -26,14 +26,14 @@ int payment(int in_hr, int in_min, float mile, int t_min)
 	int start = in_hr * 60 + in_min + 3;
 	int end = start + t_min - 3;
 
-	float e_mile = mile - 1.5;
+	float effective_mile = mile - 1.5;
 	int base_fee = 75;
-	float distance_fee = e_mile * 2 * 5;
+	float distance_fee = effective_mile * 2 * 5;
 
 	int i, time_fee = 0;
-	for (i = start + 1; i <= end; i++)
+	for (i = start; i < end; i++)
 	{
-		if ((i > 8 * 60 && i <= 10 * 60) || (i > 17 * 60 && i <= 19 * 60))
+		if ((i >= 8 * 60 && i < 10 * 60) || (i >= 17 * 60 && i < 19 * 60))
 			time_fee += 7;
 		else
 			time_fee += 5;
