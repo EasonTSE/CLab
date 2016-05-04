@@ -7,13 +7,13 @@ int main()
 {
 	int in_hr, in_min, mile, t_min;
 
-	printf("請輸入上車時間:\n");
+	printf("請輸入上車時間: ");
 	scanf("%d:%d", &in_hr, &in_min);
 
-	printf("請輸入乘車里程\n");
+	printf("請輸入乘車里程: ");
 	scanf("%d", &mile);
 
-	printf("請輸入乘車時間\n");
+	printf("請輸入乘車時間: ");
 	scanf("%d", &t_min);
 
 	printf("本次搭乘金額為: %d\n", payment(in_hr, in_min, mile, t_min));

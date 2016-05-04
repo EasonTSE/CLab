@@ -7,10 +7,10 @@ import subprocess as sp
 try:
     f = sys.argv[1]
 except:
-    sys.exit('usage: utf8_to_big.py <input_file>')
+    sys.exit('usage: utf8_to_big5.py <input_file>')
 
 if len(sys.argv) != 2:
-    sys.exit('usage: utf8_to_big.py <input_file>')
+    sys.exit('usage: utf8_to_big5.py <input_file>')
 elif '_utf8' not in f:
     sys.exit("'_utf8' is not in file's name! Are you inputing a wrong file?")
 
