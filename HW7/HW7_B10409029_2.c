@@ -30,7 +30,7 @@ int main(int argc, char const *argv[])
     {
       if (count++ < size)
       {
-        printf("count: %d\n", count);
+        //printf("count: %d\n", count);
         add(member, count);
         show_member(member, count);
       }
@@ -69,15 +69,23 @@ int main(int argc, char const *argv[])
 void add(struct memberdata arr[], int i)
 {
   struct memberdata *ptr = arr;
-  int n;
+  int n, acclen = 10, pwdlen = 10;
 
-  printf("請輸入帳號: ");
-  scanf("%s", (ptr+i-1)->username);
-  fflush(stdin);
+  do {
+    printf("請輸入帳號: ");1
+    scanf("%s", (ptr+i-1)->username);
+    fflush(stdin);
+    if (strlen((ptr+i-1)->username) > acclen)
+      printf("帳號最多%d個字\n", acclen);
+  } while(strlen((ptr+i-1)->username) > acclen);
 
-  printf("請輸入密碼: ");
-  scanf("%s", (ptr+i-1)->password);
-  fflush(stdin);
+  do {
+    printf("請輸入密碼: ");
+    scanf("%s", (ptr+i-1)->password);
+    fflush(stdin);
+    if (strlen((ptr+i-1)->password) > pwdlen)
+      printf("密碼最多%d個字\n", pwdlen);
+  } while(strlen((ptr+i-1)->password) > pwdlen);
 }
 
 int check(struct memberdata arr[], char account[], char password[], int len)
