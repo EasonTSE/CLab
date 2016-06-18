@@ -16,20 +16,19 @@ int main()
 	scanf("%d", &row);
 	printf("請輸入矩陣的行數(COL): ");
 	scanf("%d", &col);
-	
+
 	int **matrix;
 	int row_ptr_size = row * sizeof(*matrix);
-	int row_elements_size = col * sizeof(**matrix); 
+	int row_elements_size = col * sizeof(**matrix);
 	matrix = (int **) malloc(row_ptr_size + row * row_elements_size);
-	//matrix = (int **) malloc(1024);
 	initMatrix(matrix, row, col);
 	generate(matrix, row, col);
 	printMatrix(matrix, row, col);
 	printf("main() after printed!\n");
-	
+
 	free(matrix);
 	printf("free!\n");
-	
+
 	return 0;
 }
 
@@ -38,7 +37,7 @@ void generate(int **ptr, int row, int col)
 	int **addr = ptr;
 	int i, j;
 	int rnum = random_number(1, row*col);
-	
+
 	for (i = 0; i < row; i++)
 	{
 		printf("3\n");
@@ -51,7 +50,7 @@ void generate(int **ptr, int row, int col)
 				rnum = random_number(1, row*col);
 			};
 			*(*(addr+i)+j) = rnum;
-		}	
+		}
 	}
 	printf("generated!\n");
 }
@@ -75,9 +74,9 @@ void initMatrix(int **ptr, int row, int col)
 int isExist(int n, int **ptr, int row, int col)
 {
 	int i,j;
-	
+
 	printf("6\n");
-	
+
 	for (i = 0; i < row; i++)
 	{
 		printf("7\n");
@@ -88,7 +87,7 @@ int isExist(int n, int **ptr, int row, int col)
 			{
 				printf("9\n");
 				return 1;
-			}				
+			}
 		}
 	}
 	return 0;
